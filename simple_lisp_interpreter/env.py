@@ -65,3 +65,18 @@ def standard_env():
 
 
 global_env = standard_env()
+
+
+def is_pair(obj):
+    return isinstance(obj, (list, tuple)) and len(obj) > 1
+
+
+def cons(x, y):
+    if not isinstance(x, (list, tuple)):
+        x = [x]
+    if not isinstance(y, (list, tuple)):
+        y = [y]
+    return x + y
+
+
+macro_table = {}
